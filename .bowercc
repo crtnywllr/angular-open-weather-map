@@ -1,0 +1,4 @@
+ECHO is on.
+{
+"directory": "app/bower_components"
+}
