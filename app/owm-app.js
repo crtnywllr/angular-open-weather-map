@@ -1,14 +1,12 @@
-angular.module('myApp', [ngRoute])
+angular.module('myApp', ['ngRoute'])
 
-.value(owmCities[
+.value('owmCities', [
     'New York',
     'Houston',
     'Chicago',
     'Los Angeles',
     'Boston',
-    'Seattle',
-    'Babylon'
-
+    'Seattle'
     ])
 
 .config(function ($routeProvider) {
@@ -18,13 +16,12 @@ angular.module('myApp', [ngRoute])
             controller: 'HomeCtrl as home'
         })
         .when('/error', {
-            template: '<p>No such luck, buddy.</p>'
+            template: '<p>Sorry, no dice. Try again?</p>'
         })
         .when('/cities/:city', {
-            templateUrl: 'city.html'
-            controller: "cityCtrl"
-
-                resolve: {
+            templateUrl: 'city.html',
+            controller: "CityCtrl",
+            resolve: {
                 city: function (owmCities, $route, $location) {
                     var city = $route.current.params.city;
 
@@ -37,7 +34,7 @@ angular.module('myApp', [ngRoute])
             }
         })
         .otherwise({
-            redirectTo: "/error";
+            redirectTo: "/error"
         })
 
 })
@@ -52,6 +49,6 @@ angular.module('myApp', [ngRoute])
     this.welcomeMessage = "Welcome home!";
 })
 
-.controller('cityCtrl', function ($scope) {
+.controller('CityCtrl', function ($scope, city) {
     $scope.city = city;
 })
