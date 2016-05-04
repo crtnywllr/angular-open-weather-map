@@ -8,21 +8,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <a href="#/">Home</a>
-    <a href="#/cities/New%20York">New York</a>
-    <a href="#/cities/Houston">Houston</a>
-    <a href="#/cities/Chicago">Chicago</a>
-    <a href="#/cities/Los%20Angeles">Los Angeles</a>
-    <a href="#/cities/Boston">Boston</a>
-    <a href="#/cities/Seattle">Seattle</a>
-    <a href="#/cities/error">Babylon</a>
+<body ng-class="{loading: isLoading}">
+    <a href=" #/ ">Home</a>
+    <a href="#/cities/New%20York ">New York</a>
+    <a href="#/cities/Houston ">Houston</a>
+    <a href="#/cities/Chicago ">Chicago</a>
+    <a href="#/cities/Los%20Angeles ">Los Angeles</a>
+    <a href="#/cities/Boston ">Boston</a>
+    <a href="#/cities/Seattle ">Seattle</a>
+    <a href="#/cities/error ">Babylon</a>
 
-    <div ng-view></div>
+    <div class="animate-view-container">
+        <div ng-view class="animate-view"></div>
+    </div>
 
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-route/angular-route.js"></script>
-    <script src="./owm-app.js"></script>
+
+    <script src="../bower_components/angular/angular.js "></script>
+    <script src="../bower_components/angular-route/angular-route.js "></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./owm-app.js "></script>
 </body>
 
 </html>
